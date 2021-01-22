@@ -9,10 +9,10 @@
 
 int main() {
 	char* buf;
-	printf("%u\n", sizeof(buf));
+	printf("Size of buffer: %u\n", sizeof(buf));
 
 	int pagesize = sysconf(_SC_PAGE_SIZE);
-	printf("Page size is %u\n", pagesize);
+	printf("Page size: %u\n", pagesize);
 
 	int status = posix_memalign((void**)&buf, pagesize, 4 * pagesize);
 	if(status == 0){
